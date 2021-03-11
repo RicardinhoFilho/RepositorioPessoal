@@ -10,17 +10,30 @@ namespace WebApplication1.Models
     {
         public int UsuarioId { get; set; }
 
-        [Required(ErrorMessage ="O campo {0} é obrigatório")]
-        [StringLength(30,ErrorMessage ="Use menos caracteres")]
+        [Required(ErrorMessage = "O campo {0} é obrigatório")]
+        [StringLength(30, ErrorMessage = "Use menos caracteres")]
         public string Nome { get; set; }
 
-        [Required(ErrorMessage ="O campo {0} é obrigatório")]
-        [EmailAddress(ErrorMessage ="Escreva um Email válido")]
+        [Required(ErrorMessage = "O campo {0} é obrigatório")]
+        [EmailAddress(ErrorMessage = "Escreva um Email válido")]
         public string Email { get; set; }
         public string Foto { get; set; }
 
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
         [DataType(DataType.Password)]
         public string Senha { get; set; }
+
+        public Repositorio AdicionarRepositorio(string titulo, int chave)
+        {
+            Repositorio repositorio = new Repositorio();
+            repositorio.Titulo = titulo;
+            repositorio.UsuarioId = chave;
+
+            return repositorio;
+        }
+
+       
+       
+
     }
 }

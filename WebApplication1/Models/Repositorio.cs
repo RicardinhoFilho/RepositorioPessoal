@@ -16,5 +16,16 @@ namespace WebApplication1.Models
         public int UsuarioId { get; set; }
 
         public Usuario Usuario { get; set; }
+
+
+        public Nota AdicionarNota(string titulo, string anotacao)
+        {
+            Nota nota = new Nota();
+            nota.RepositorioId = RepositorioId;
+            nota.Titulo = titulo;
+            nota.Anotacao = anotacao;
+
+            return nota;
+        }
     }
 }

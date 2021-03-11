@@ -1,0 +1,19 @@
+﻿@model Usuario ;
+@{
+    ViewData["Title"] = "Index";
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Inicio</title>
+</head>
+<body>
+    <h1>Seja bem vindo @Model.Nome</h1>
+    <img src="@Url.Content(Model.Foto)" alt="Imagem do Usuário" />
+    <p>@Model.Email</p>
+    <a asp-controller="Repositorio" asp-action="TelaInicial" asp-route-usuarioId="@Model.UsuarioId">Ver meus repositórios</a>
+
+</body>
+</html>
+
+

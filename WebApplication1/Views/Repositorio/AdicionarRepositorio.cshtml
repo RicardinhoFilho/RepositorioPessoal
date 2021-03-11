@@ -1,0 +1,31 @@
+﻿@model WebApplication1.ViewModels.RepositorioViewModel
+@{
+    ViewData["Title"] = "AdicionarRepositorio";
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>AdicionarRepositorio</title>
+</head>
+<body>
+    <h1>AdicionarRepositorio</h1>
+
+    <form asp-action="AdicionarRepositorio" method="post">
+        <div class="mb-3">
+            <label asp-for="Titulo" id="Titulo">Titulo</label>
+            <input class="form-control" asp-for="Titulo" value="@ViewData["Titulo"]" id="Titulo" />
+            <span asp-validation-for="Titulo"></span>
+
+        </div>
+
+        <button type="submit" class="btn btn-primary mb-3">Salvar Alteração</button>
+        <button  class="btn btn-primary mb-3"  asp-action="TelaInicial" asp-route-usuarioId="@ViewData["usuarioId"]">Cancelar</button>
+    </form>
+
+    <p>@ViewData["usuarioId"]</p>
+
+</body>
+
+</html>
+
+

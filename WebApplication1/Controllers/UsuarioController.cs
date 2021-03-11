@@ -9,7 +9,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-using WebApplication1.Interfaces;
 using WebApplication1.Models;
 using WebApplication1.ViewModels;
 
@@ -19,7 +18,8 @@ namespace WebApplication1.Controllers
     {
         private readonly Contexto contexto;
         private readonly IWebHostEnvironment _webHostEnvironment;
-
+        private int usuarioId;
+        public IEnumerable<Usuario> Usuario { get; set; }
 
         public UsuarioController(Contexto contexto, IWebHostEnvironment webHostEnvironment)
         {
@@ -66,6 +66,7 @@ namespace WebApplication1.Controllers
 
                 contexto.Add(usuario);
                 await contexto.SaveChangesAsync();
+                return Redirect("Login");
             }
             return View(model);
         }
@@ -96,26 +97,36 @@ namespace WebApplication1.Controllers
                         }
                     }
 
-                    var usuario = await contexto.Usuarios.FindAsync(usuarioid);
-
-                    if (usuario.Senha == model.Senha)
+                    if (usuarioid != 0)
                     {
-                        
-                        //var Repositorios = await contexto.Repositorios.ToListAsync();
-                        //foreach (var item in Repositorios)
-                        //{
+                        var usuario = await contexto.Usuarios.FindAsync(usuarioid);
 
-                        //}
+                        if (usuario.Senha == model.Senha)
+                        {
 
-                        
-                        return View("Inicio");
+                            //var Repositorios = await contexto.Repositorios.ToListAsync();
+                            //foreach (var item in Repositorios)
+                            //{
+
+                            //}
+
+                            this.usuarioId = usuarioid;
+
+                            return View("Index", usuario);
+                        }
+                        else
+                        {
+                            ModelState.AddModelError("", "Senha inválida");
+                            return View(model);
+                        }
                     }
                     else
                     {
-                        ModelState.AddModelError("", "Senha inválida");
+                        ModelState.AddModelError("", "Email inválido");
                         return View(model);
                     }
                 }
+                    
                 else
                 {
                     ModelState.AddModelError("", "Email inválido");
@@ -131,5 +142,11 @@ namespace WebApplication1.Controllers
             }
         }
 
+        public async Task<IActionResult> Index()
+        {
+            //var usuario = 
+            ViewBag.Usuario = await contexto.Usuarios.FindAsync(usuarioId); ;
+            return View();
+        }
     }
 }

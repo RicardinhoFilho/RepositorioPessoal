@@ -63,7 +63,7 @@ namespace WebApplication1
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=UsuarioController}/{action=NovoUsuario}/{id?}");
+                    pattern: "{controller=Usuario}/{action=Login}/{id?}");
             });
         }
     }

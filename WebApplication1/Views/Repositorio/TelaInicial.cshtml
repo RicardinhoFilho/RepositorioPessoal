@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Repositorio>
+@{
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+
+
+
+    <a asp-action="AdicionarRepositorio" asp-route-usuarioId="@ViewData["usuarioId"]">Adicionar Repositório</a>
+
+    <p>Repositorio @Model.Count()</p>
+
+    <ul class="list-group">
+
+        @foreach (var item in Model)
+        {
+
+
+
+            <li class="list-group-item">
+                <div class="row">
+                    <div class="col-10">
+                        <a asp-controller="Nota" asp-action="ExibirNotas" asp-route-repositorioId="@item.RepositorioId" class="@item.UsuarioId"><h5>@item.Titulo</h5></a>
+                    </div>
+                    @*<a asp-action="ExcluirRepositorio" asp-route-repositorioId="@item.RepositorioId">Deletar</a><a asp-action="EditarRepositorio" asp-route-repositorioId="@item.RepositorioId">Editar</a>*@
+                    <div class="col col-lg-2">
+                        <form action="/" method="post">
+
+                            <button  class="btn btn-danger" asp-action="ExcluirRepositorio" asp-route-repositorioId="@item.RepositorioId">Deletar</button>
+
+                            <button  class="btn btn-warning" asp-action="EditarRepositorio" asp-route-repositorioId="@item.RepositorioId">Editar</button>
+
+                        </form>
+                    </div>
+                </div>
+            </li>
+
+
+        }
+    </ul>
+
+
+    </body>
+</html>

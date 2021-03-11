@@ -1,0 +1,35 @@
+﻿@model WebApplication1.ViewModels.NotaViewModel
+@{
+    ViewData["Title"] = "AdicionarNota";
+}
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>AdicionarRepositorio</title>
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" />
+    @*<link href="~/css/b" rel="stylesheet" />
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" />*@
+</head>
+<body>
+
+    <h1>AdicionarNota</h1>
+    <form asp-action="AdicionarNota" method="post">
+        <div class="mb-3">
+            <label asp-for="Titulo" id="Titulo">Titulo</label>
+            <input class="form-control" asp-for="Titulo" value="Titulo" id="Titulo" />
+            <span asp-validation-for="Titulo"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Anotacao" id="Anotacao">Anotacao</label>
+            <textarea class="form-control" rows="8" cols="33" asp-for="Anotacao" value="Anotacao" id="Anotacao"></textarea>
+            <span asp-validation-for="Anotacao"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary mb-3">Salvar Anotação</button>
+        <button type="submit" class="btn btn-primary mb-3" Alteração asp-action="ExibirNotas" asp-route-repositorioId="@ViewData["repositorioId"]">Cancelar</button>
+    </form>
+       
+</body>
+
+</html>

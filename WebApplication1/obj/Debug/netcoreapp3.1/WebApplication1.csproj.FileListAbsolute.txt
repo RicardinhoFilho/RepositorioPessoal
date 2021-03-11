@@ -61,8 +61,6 @@ C:\Users\User\Desktop\PersonalRepository\WebApplication1\obj\Debug\netcoreapp3.1
 C:\Users\User\Desktop\PersonalRepository\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.TagHelpers.input.cache
 C:\Users\User\Desktop\PersonalRepository\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.TagHelpers.output.cache
 C:\Users\User\Desktop\PersonalRepository\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.RazorCoreGenerate.cache
-C:\Users\User\Desktop\PersonalRepository\WebApplication1\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
-C:\Users\User\Desktop\PersonalRepository\WebApplication1\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
 C:\Users\User\Desktop\PersonalRepository\WebApplication1\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Users\User\Desktop\PersonalRepository\WebApplication1\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\User\Desktop\PersonalRepository\WebApplication1\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
@@ -149,4 +147,11 @@ C:\Users\User\Desktop\PersonalRepository\WebApplication1\bin\Debug\netcoreapp3.1
 C:\Users\User\Desktop\PersonalRepository\WebApplication1\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\User\Desktop\PersonalRepository\WebApplication1\obj\Debug\netcoreapp3.1\Razor\Views\Usuario\NovoUsuario.cshtml.g.cs
 C:\Users\User\Desktop\PersonalRepository\WebApplication1\obj\Debug\netcoreapp3.1\Razor\Views\Usuario\Login.cshtml.g.cs
-C:\Users\User\Desktop\PersonalRepository\WebApplication1\obj\Debug\netcoreapp3.1\Razor\Views\Usuario\Inicio.cshtml.g.cs
+C:\Users\User\Desktop\PersonalRepository\WebApplication1\obj\Debug\netcoreapp3.1\Razor\Views\Usuario\Index.cshtml.g.cs
+C:\Users\User\Desktop\PersonalRepository\WebApplication1\obj\Debug\netcoreapp3.1\Razor\Views\Repositorio\AdicionarRepositorio.cshtml.g.cs
+C:\Users\User\Desktop\PersonalRepository\WebApplication1\obj\Debug\netcoreapp3.1\Razor\Views\Nota\ExibirNotas.cshtml.g.cs
+C:\Users\User\Desktop\PersonalRepository\WebApplication1\obj\Debug\netcoreapp3.1\Razor\Views\Nota\AdicionarNota.cshtml.g.cs
+C:\Users\User\Desktop\PersonalRepository\WebApplication1\obj\Debug\netcoreapp3.1\Razor\Views\Nota\ExibirDetalhes.cshtml.g.cs
+C:\Users\User\Desktop\PersonalRepository\WebApplication1\obj\Debug\netcoreapp3.1\Razor\Views\Repositorio\EditarRepositorio.cshtml.g.cs
+C:\Users\User\Desktop\PersonalRepository\WebApplication1\obj\Debug\netcoreapp3.1\Razor\Views\Nota\EditarNota.cshtml.g.cs
+C:\Users\User\Desktop\PersonalRepository\WebApplication1\obj\Debug\netcoreapp3.1\Razor\Views\Repositorio\TelaInicial.cshtml.g.cs

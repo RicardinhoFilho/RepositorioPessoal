@@ -1,0 +1,17 @@
+﻿@model  Nota
+@{
+    ViewData["Título"] = Model.Titulo;
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Model.Titulo</title>
+</head>
+<body>
+
+    <h1>@Model.Titulo</h1>
+
+    @Model.Anotacao
+
+</body>
+</html>
