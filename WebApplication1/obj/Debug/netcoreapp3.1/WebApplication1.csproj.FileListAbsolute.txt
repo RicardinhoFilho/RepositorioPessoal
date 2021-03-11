@@ -62,7 +62,6 @@ C:\Users\User\Desktop\PersonalRepository\WebApplication1\obj\Debug\netcoreapp3.1
 C:\Users\User\Desktop\PersonalRepository\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.TagHelpers.output.cache
 C:\Users\User\Desktop\PersonalRepository\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.RazorCoreGenerate.cache
 C:\Users\User\Desktop\PersonalRepository\WebApplication1\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
-C:\Users\User\Desktop\PersonalRepository\WebApplication1\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\User\Desktop\PersonalRepository\WebApplication1\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
 C:\Users\User\Desktop\PersonalRepository\WebApplication1\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
 C:\Users\User\Desktop\PersonalRepository\WebApplication1\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
@@ -155,3 +154,5 @@ C:\Users\User\Desktop\PersonalRepository\WebApplication1\obj\Debug\netcoreapp3.1
 C:\Users\User\Desktop\PersonalRepository\WebApplication1\obj\Debug\netcoreapp3.1\Razor\Views\Repositorio\EditarRepositorio.cshtml.g.cs
 C:\Users\User\Desktop\PersonalRepository\WebApplication1\obj\Debug\netcoreapp3.1\Razor\Views\Nota\EditarNota.cshtml.g.cs
 C:\Users\User\Desktop\PersonalRepository\WebApplication1\obj\Debug\netcoreapp3.1\Razor\Views\Repositorio\TelaInicial.cshtml.g.cs
+C:\Users\User\Desktop\PersonalRepository\WebApplication1\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
+C:\Users\User\Desktop\PersonalRepository\WebApplication1\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_NavBar.cshtml.g.cs

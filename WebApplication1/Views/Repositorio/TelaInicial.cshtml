@@ -1,5 +1,6 @@
 ﻿@model IEnumerable<Repositorio>
 @{
+    ViewData["Title"] = "TelaInicial";
 }
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -8,32 +9,28 @@
 </head>
 <body>
 
+    <partial name="_NavBar" />
 
+    <a asp-action="AdicionarRepositorio" asp-route-usuarioId="@ViewData["usuarioId"]">Adicionar Repositório <strong>+</strong></a>
 
-    <a asp-action="AdicionarRepositorio" asp-route-usuarioId="@ViewData["usuarioId"]">Adicionar Repositório</a>
+    <p>Total: @Model.Count()</p>
 
-    <p>Repositorio @Model.Count()</p>
 
     <ul class="list-group">
-
         @foreach (var item in Model)
         {
 
-
-
             <li class="list-group-item">
                 <div class="row">
-                    <div class="col-10">
-                        <a asp-controller="Nota" asp-action="ExibirNotas" asp-route-repositorioId="@item.RepositorioId" class="@item.UsuarioId"><h5>@item.Titulo</h5></a>
+                    <div class="col-9">
+                        <a class="text-decoration-none" asp-controller="Nota" asp-action="ExibirNotas" asp-route-repositorioId="@item.RepositorioId"><h2 class="display-6">@item.Titulo</h2></a>
                     </div>
-                    @*<a asp-action="ExcluirRepositorio" asp-route-repositorioId="@item.RepositorioId">Deletar</a><a asp-action="EditarRepositorio" asp-route-repositorioId="@item.RepositorioId">Editar</a>*@
-                    <div class="col col-lg-2">
+
+                    <div class="col col-lg-3">
                         <form action="/" method="post">
 
-                            <button  class="btn btn-danger" asp-action="ExcluirRepositorio" asp-route-repositorioId="@item.RepositorioId">Deletar</button>
-
-                            <button  class="btn btn-warning" asp-action="EditarRepositorio" asp-route-repositorioId="@item.RepositorioId">Editar</button>
-
+                            <button class="btn btn-danger" asp-action="ExcluirRepositorio" asp-route-repositorioId="@item.RepositorioId">Deletar</button>
+                            <a class="link-warning" asp-action="EditarRepositorio" asp-route-repositorioId="@item.RepositorioId">Editar</a>
                         </form>
                     </div>
                 </div>
@@ -44,5 +41,6 @@
     </ul>
 
 
-    </body>
+
+</body>
 </html>

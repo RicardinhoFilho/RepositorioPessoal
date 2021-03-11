@@ -3,18 +3,37 @@
     ViewData["Title"] = "ExibirNotas";
 }
 
-<h1>Minhas Notas</h1>
+<partial name="_NavBar" />
+
+<h1 class="Nome-Repositorio">@ViewData["Titulo"]</h1>
+
+
+<h3>Total de notas: @Model.Count()</h3>
 
 <a asp-action="AdicionarNota" asp-route-codigo="@ViewData["repositorioId"]">Adicionar Anotação</a>
 
-@foreach (var nota in Model)
-{
-    <ul class="list-group">
+
+
+<ul class="list-group">s
+    @foreach (var nota in Model)
+    {
+
         <li class="list-group-item">
-            <a asp-action="ExibirDetalhes" asp-route-id="@nota.NotaId"><h5>@nota.Titulo</h5></a>
-            <a asp-action="ExcluirNota" asp-route-notaId="@nota.NotaId">Deletar</a>
-            <a asp-action="EditarNota" asp-route-notaId="@nota.NotaId">Editar</a>
+            <div class="row">
+                <div class="col-9">
+
+                    <a class="text-decoration-none" asp-action="ExibirDetalhes" asp-route-id="@nota.NotaId"><h3 class="Nota-Titulo">@nota.Titulo</h3></a>
+
+                </div>
+                <div class="col col-lg-3">
+                    <form action="/" method="post">
+                        <button class="btn btn-danger" asp-action="ExcluirNota" asp-route-notaId="@nota.NotaId">Deletar</button>
+                        <a asp-action="EditarNota" asp-route-notaId="@nota.NotaId">Editar</a>
+                    </form>
+                </div>
+            </div>
         </li>
-    </ul>
-}
+
+    }
+</ul>
 

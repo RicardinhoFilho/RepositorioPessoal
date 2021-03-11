@@ -112,6 +112,8 @@ namespace WebApplication1.Controllers
 
                             this.usuarioId = usuarioid;
 
+                            
+
                             return View("Index", usuario);
                         }
                         else
@@ -145,7 +147,13 @@ namespace WebApplication1.Controllers
         public async Task<IActionResult> Index()
         {
             //var usuario = 
-            ViewBag.Usuario = await contexto.Usuarios.FindAsync(usuarioId); ;
+            ViewBag.Usuario = await contexto.Usuarios.FindAsync(usuarioId); 
+            return View();
+        }
+
+        public async Task<IActionResult> Index(int usuarioId)
+        {
+            ViewBag.Usuario = await contexto.Usuarios.FindAsync(usuarioId);
             return View();
         }
     }

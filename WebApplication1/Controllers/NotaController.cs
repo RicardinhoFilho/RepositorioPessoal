@@ -20,11 +20,13 @@ namespace WebApplication1.Controllers
         public async Task<IActionResult> ExibirNotas(string repositorioId)
         {
             int repId = Int32.Parse(repositorioId);
+            var repositorio = await contexto.Repositorios.FindAsync(repId);
             var notasGerais = await contexto.Notas.ToListAsync();
 
             var notas = notasGerais.Where(n => n.RepositorioId == repId);
 
             ViewData["repositorioId"] = repositorioId;
+            ViewData["Titulo"] = repositorio.Titulo;
 
             return View(notas);
         }

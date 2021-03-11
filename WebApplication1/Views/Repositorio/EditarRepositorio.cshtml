@@ -15,8 +15,7 @@
         <div class="mb-3">
             <label asp-for="Titulo" id="Titulo">Titulo</label>
             <input class="form-control" asp-for="Titulo" value="@ViewData["Titulo"]" id="Titulo" />
-            <span class="red-darken-3" asp-validation-for="Titulo"></span>
-
+            <span asp-validation-for="Titulo"></span>
         </div>
 
         <button type="submit" class="btn btn-primary mb-3">Salvar Alteração</button>

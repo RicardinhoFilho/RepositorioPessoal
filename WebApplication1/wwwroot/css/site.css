@@ -69,3 +69,36 @@ body {
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
 }
+
+/*cabeçalho------------------------------------------------------------------------------------------------------------------------*/
+div.container-fluid{
+    padding: 0.8rem;
+    background-color:#d3d3d3;
+
+    
+}
+
+/*Titulos/links da página-----------------------------------------------------------------------------------------------------------------------*/
+h2.display-6{
+    color: grey;
+}
+
+.list-group-item{
+    margin-top : 10px;
+}
+
+.list-group-item{
+    margin-top: 2rem;
+}
+
+a.nav-link{
+    color: black;
+}
+
+h1.Nome-Repositorio {
+    margin-top: 5rem;
+}
+
+h3.Nota-Titulo {
+    color: grey;
+}

@@ -1,0 +1,38 @@
+﻿
+
+<link href="~/css/site.css" rel="stylesheet" />
+
+<nav class="navbar navbar-light  bg-light fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="https://localhost:44358/" asp->Perfil</a>
+
+        <a class="nav-link" href="#">Repositórios</a>
+        <a class="nav-link" href="#">Notas</a>
+
+
+        <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+    </div>
+</nav>
+
+<script>
+    var campoFiltro = document.querySelector(".form-control");
+
+    campoFiltro.addEventListener("input", () => {
+        console.log(campoFiltro.value);
+        if (campoFiltro.value.length > 0) {
+            console.log("Deu Certo")
+            var repositorios = document.querySelectorAll(".list-group-item");
+            
+            repositorios.forEach(repositorio => {
+                var nome = repositorio.querySelector("h2.display-6")
+                console.log(nome.textContent);
+            })
+       
+        }
+    })
+    
+
+</script>

@@ -93,22 +93,24 @@ namespace WebApplication1.Controllers
         [HttpPost]
         public async Task<IActionResult> EditarRepositorio(RepositorioViewModel model)
         {
-            if (!ModelState.IsValid)
-            {
-                ModelState.AddModelError("", "Título é obrigatório");
-                return View();
-            }
-
+           
+                if (!ModelState.IsValid)
+                {
+                    ModelState.AddModelError("", "Título é obrigatório");
+                    return View();
+                }
             int repositorioId = Int32.Parse(TempData["repositorioId"].ToString());
 
             var repositorio = await contexto.Repositorios.FindAsync(repositorioId);
 
-            repositorio.Titulo = model.Titulo;
+                repositorio.Titulo = model.Titulo;
 
-            await contexto.SaveChangesAsync();
+                await contexto.SaveChangesAsync();
 
-            return Redirect($"TelaInicial?usuarioId={repositorio.UsuarioId}");
+                return Redirect($"TelaInicial?usuarioId={repositorio.UsuarioId}");
 
+            
+            
 
 
         }
