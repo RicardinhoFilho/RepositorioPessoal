@@ -11,10 +11,10 @@
 
     <partial name="_NavBar" />
 
+
+    <p class="total">Total: @Model.Count()</p>
+
     <a asp-action="AdicionarRepositorio" asp-route-usuarioId="@ViewData["usuarioId"]">Adicionar Repositório <strong>+</strong></a>
-
-    <p>Total: @Model.Count()</p>
-
 
     <ul class="list-group">
         @foreach (var item in Model)
@@ -23,7 +23,7 @@
             <li class="list-group-item">
                 <div class="row">
                     <div class="col-9">
-                        <a class="text-decoration-none" asp-controller="Nota" asp-action="ExibirNotas" asp-route-repositorioId="@item.RepositorioId"><h2 class="display-6">@item.Titulo</h2></a>
+                        <a class="text-decoration-none" asp-controller="Nota" asp-action="ExibirNotas" asp-route-repositorioId="@item.RepositorioId"><h2 class="display-6 Campo-De-Busca">@item.Titulo</h2></a>
                     </div>
 
                     <div class="col col-lg-3">
