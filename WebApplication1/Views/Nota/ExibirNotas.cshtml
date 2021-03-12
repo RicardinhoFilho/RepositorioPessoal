@@ -1,4 +1,5 @@
 ﻿@model IEnumerable<Nota>;
+
 @{
     ViewData["Title"] = "ExibirNotas";
 }
@@ -12,9 +13,14 @@
 
 <a asp-action="AdicionarNota" asp-route-codigo="@ViewData["repositorioId"]">Adicionar Anotação</a>
 
+<form>
+    <input calss="d-none" type="hidden" name="repositorioId" value="@ViewData["repositorioId"]" />
+    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" for="pesquisa" name="pesquisa">
+    <button onclick="BuscaAvancada" class="btn btn-outline-success" type="submit" asp-action="BuscaAvancada">Search</button>
+</form>
 
 
-<ul class="list-group">s
+<ul class="list-group">
     @foreach (var nota in Model)
     {
 
@@ -26,8 +32,8 @@
 
                 </div>
                 <div class="col col-lg-3">
-                    <form action="/" method="post">
-                        <button class="btn btn-danger" asp-action="ExcluirNota" asp-route-notaId="@nota.NotaId">Deletar</button>
+                    <form >
+                        <a class="btn btn-danger" onclick="ConfirmarExclusao(@nota.NotaId)">Deletar</a>
                         <a asp-action="EditarNota" asp-route-notaId="@nota.NotaId">Editar</a>
                     </form>
                 </div>
@@ -37,3 +43,42 @@
     }
 </ul>
 
+<div class="modal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Confirmação de exclusão</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Prosseguir com a exclusão da Nota?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-secondary btnFechar" data-dismiss="modal">Não</button>
+                <button type="button" class="btn btn-outline-danger btnExcluir" data-dismiss="modal">Sim</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function ConfirmarExclusao(notaId) {
+        $(".modal").modal();
+        $(".btnExcluir").on('click', function () {
+            $.ajax({
+                url: '/Nota/ExcluirNota',
+                method: 'POST',
+                data: { notaId: notaId },
+                success: function (data) {
+                    location.reload(true);
+                }
+            });
+        });
+        $(".btnFechar").on('click', function () {
+            notaId = null;
+            $(".modal").modal('hide');
+        })
+    }
+</script>

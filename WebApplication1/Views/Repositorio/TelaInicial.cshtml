@@ -16,6 +16,12 @@
 
     <a asp-action="AdicionarRepositorio" asp-route-usuarioId="@ViewData["usuarioId"]">Adicionar Repositório <strong>+</strong></a>
 
+    @if (TempData["RepositorioExcluido"] != null)
+    {
+        <p class="alert alert-danger">@TempData["RepositorioExcluido"].ToString()</p>
+    }
+
+
     <ul class="list-group">
         @foreach (var item in Model)
         {
@@ -29,7 +35,7 @@
                     <div class="col col-lg-3">
                         <form action="/" method="post">
 
-                            <button class="btn btn-danger" asp-action="ExcluirRepositorio" asp-route-repositorioId="@item.RepositorioId">Deletar</button>
+                            <a class="btn btn-danger" onclick="ConfirmarExclusao(@item.RepositorioId)">Deletar</a>
                             <a class="link-warning" asp-action="EditarRepositorio" asp-route-repositorioId="@item.RepositorioId">Editar</a>
                         </form>
                     </div>
@@ -41,6 +47,45 @@
     </ul>
 
 
+    <div class="modal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Confirmação de exclusão</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Prosseguir com a exclusão do Repositório?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary btnFechar" data-dismiss="modal">Não</button>
+                    <button type="button" class="btn btn-outline-danger btnExcluir" data-dismiss="modal">Sim</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function ConfirmarExclusao(repositorioId) {
+            $(".modal").modal();
+            $(".btnExcluir").on('click', function () {
+                $.ajax({
+                    url: '/Repositorio/ExcluirRepositorio',
+                    method: 'POST',
+                    data: { repositorioId: repositorioId },
+                    success: function (data) {
+                        location.reload(true);
+                    }
+                });
+            });
+            $(".btnFechar").on('click', function () {
+                notaId = null;
+                $(".modal").modal('hide');
+            })
+        }
+    </script>
 
 </body>
 </html>

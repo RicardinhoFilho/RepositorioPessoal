@@ -68,14 +68,21 @@ namespace WebApplication1.Controllers
 
         }
 
-        public async Task<IActionResult> ExcluirRepositorio(int repositorioId)
+        [HttpPost]
+        public async Task<JsonResult> ExcluirRepositorio(int repositorioId)
         {
             var repositorio = await contexto.Repositorios.FindAsync(repositorioId);
-            int usuarioId = repositorio.UsuarioId;
+            var notas = await contexto.Notas.ToListAsync();
+            var notasValidas = notas.Where(n => n.RepositorioId == repositorioId);
+
+            if (notasValidas.Count() > 0)
+            {
+                TempData["RepositorioExcluido"] = $"Repositorio {repositorio.Titulo} não pode ser excluído pois possui {notasValidas.Count()} Notas armazenadas ";
+                return Json(false);
+            }
             contexto.Repositorios.Remove(repositorio);
             await contexto.SaveChangesAsync();
-
-            return Redirect($"TelaInicial?usuarioId={usuarioId}");
+            return Json(true);
         }
 
         [HttpGet]
@@ -108,11 +115,8 @@ namespace WebApplication1.Controllers
                 await contexto.SaveChangesAsync();
 
                 return Redirect($"TelaInicial?usuarioId={repositorio.UsuarioId}");
-
-            
-            
-
-
         }
+
+       
     }
 }

@@ -80,7 +80,8 @@ namespace WebApplication1.Controllers
             }
         }
 
-        public async Task<IActionResult> ExcluirNota(int notaId)
+        [HttpPost]
+        public async Task<JsonResult> ExcluirNota(int notaId)
         {
             var nota = await contexto.Notas.FindAsync(notaId);
 
@@ -89,7 +90,7 @@ namespace WebApplication1.Controllers
             contexto.Notas.Remove(nota);
             await contexto.SaveChangesAsync();
 
-            return Redirect($"ExibirNotas?repositorioId={repositorioId}");
+            return Json(true);
 
         }
 
@@ -126,6 +127,28 @@ namespace WebApplication1.Controllers
 
             return Redirect($"ExibirNotas?repositorioId={nota.RepositorioId}");
 
+        }
+
+
+
+        [HttpGet]
+        [HttpPost]
+        public async Task<IActionResult> BuscaAvancada(int repositorioId, string pesquisa )
+        {
+
+            //var listaProdutosDiferentes = listaPrincipalProdutos.Except(listaFinalProdutos).Concat(listaFinalProdutos.Except(listaPrincipalProdutos));
+
+            var notas = await contexto.Notas.ToListAsync();
+
+            var notasValidas = notas.Where(rep => rep.RepositorioId == repositorioId);
+
+            var notasEncontradasPorTitulo = from rep in notasValidas where EF.Functions.Like(rep.Titulo, $"%{pesquisa}%")  select rep;
+
+            var notasEncontradasPorAnotacao = from rep in notasValidas where EF.Functions.Like(rep.Anotacao, $"%{pesquisa}%") select rep;
+
+            var notasConcatenadas = notasEncontradasPorTitulo.Except(notasEncontradasPorAnotacao).Concat(notasEncontradasPorAnotacao);
+           
+            return View(notasConcatenadas);
         }
 
     }
