@@ -11,12 +11,12 @@
 
 <h3>Total de notas: @Model.Count()</h3>
 
-<a asp-action="AdicionarNota" asp-route-codigo="@ViewData["repositorioId"]">Adicionar Anotação</a>
+<a asp-action="AdicionarNota" asp-route-codigo="@ViewData["repositorioId"]">Adicionar Anotação <strong>+</strong></a>
 
 <form>
     <input calss="d-none" type="hidden" name="repositorioId" value="@ViewData["repositorioId"]" />
     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" for="pesquisa" name="pesquisa">
-    <button onclick="BuscaAvancada" class="btn btn-outline-success" type="submit" asp-action="BuscaAvancada">Search</button>
+    <button onclick="BuscaAvancada" class="btn btn-outline-success" type="submit" asp-action="BuscaAvancada">Busca Avançada</button>
 </form>
 
 
@@ -34,7 +34,7 @@
                 <div class="col col-lg-3">
                     <form >
                         <a class="btn btn-danger" onclick="ConfirmarExclusao(@nota.NotaId)">Deletar</a>
-                        <a asp-action="EditarNota" asp-route-notaId="@nota.NotaId">Editar</a>
+                        <a class="btn btn-warning" asp-action="EditarNota" asp-route-notaId="@nota.NotaId">Editar</a>
                     </form>
                 </div>
             </div>
@@ -42,6 +42,7 @@
 
     }
 </ul>
+<a class="btn btn-primary" asp-controller="Repositorio" asp-action="TelaInicial" asp-route-usuarioId="@ViewData["usuarioId"]">Voltar</a>
 
 <div class="modal" tabindex="-1">
     <div class="modal-dialog">

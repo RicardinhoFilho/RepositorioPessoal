@@ -1,4 +1,5 @@
 ﻿@model WebApplication1.ViewModels.NotaViewModel
+
 @{
     ViewData["Title"] = "Editar rNota";
 }
@@ -8,8 +9,9 @@
 </head>
 <body>
 
-    <h1>Editar Nota</h1>
-
+   
+        <h1>Editar Nota</h1>
+    
 
     <form asp-action="EditarNota" method="post">
         <div class="mb-3">
@@ -18,33 +20,19 @@
             <span asp-validation-for="Titulo"></span>
         </div>
         <div class="mb-3">
+
+
             <label asp-for="Anotacao" id="Anotacao">Anotacao</label>
-            <textarea class="form-control" rows="8" cols="33" asp-for="Anotacao" value="Anotacao" id="Anotacao" placeholder="@ViewData["Anotacao"]">@(ViewData["Anotacao"])</textarea>
+            <textarea class="form-control" rows="8" cols="33" asp-for="Anotacao" placeholder="@(ViewData["Anotacao"])" spellcheck="false" wrap="soft"></textarea>
+            @*<input type="text" class="form-control" rows="8" cols="33" asp-for="Anotacao" value="Anotacao" id="Anotacao" value="@(ViewData["Anotacao"])"/>*@
             <span asp-validation-for="Anotacao"></span>
         </div>
 
         <button type="submit" class="btn btn-primary mb-3">Salvar Alteração</button>
-        <button type="submit" class="btn btn-primary mb-3"  asp-action="ExibirNotas" asp-route-repositorioId="@ViewData["repositorioId"]">Cancelar</button>
+        <button type="submit" class="btn btn-primary mb-3" asp-action="ExibirNotas" asp-route-repositorioId="@ViewData["repositorioId"]">Cancelar</button>
+
     </form>
 
-
-    @*<form asp-action="EditarNota" method="post">
-
-        <div>
-            <label asp-for="Titulo" id="Titulo">Titulo</label>
-            <input asp-for="Titulo" value="@ViewData["Titulo"]" id="Titulo" />
-            <span asp-validation-for="Titulo"></span>
-
-            <label asp-for="Anotacao" id="Anotacao">Anotacao</label>
-            <textarea rows="8" cols="33" asp-for="Anotacao" id="Anotacao" placeholder="@ViewData["Anotacao"]">@ViewData["Anotacao"]</textarea>
-            <span asp-validation-for="Anotacao"></span>
-
-
-        </div>
-
-        <button type="submit">Registrar</button> &emsp;
-        <button asp-action="ExibirNotas" asp-route-repositorioId="@ViewData["repositorioId"]">Cancelar</button> &emsp;
-    </form>*@
 </body>
 
 </html>

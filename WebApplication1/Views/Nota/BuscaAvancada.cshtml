@@ -8,27 +8,26 @@
 <h3>Total de notas: @Model.Count()</h3>
 
 <ul class="list-group">
-    s
+    
     @foreach (var nota in Model)
     {
 
         <li class="list-group-item">
             <div class="row">
                 <div class="col-9">
+                    <div class="mb-3">
+                        <h3 class="Nota-Titulo Campo-De-Busca">@nota.Titulo</h3>
 
-                    <h3 class="Nota-Titulo Campo-De-Busca">@nota.Titulo</h3>
-                    <p>@nota.Anotacao</p>
 
+                        <textarea class="form-control" readonly spellcheck="false" wrap="soft" rows="8" cols="33">@nota.Anotacao</textarea>
+                    </div>
+
+                    
 
                 </div>
-                @*<div class="col col-lg-3">
-                    <form action="/" method="post">
-                        <button class="btn btn-danger" asp-action="ExcluirNota" asp-route-notaId="@nota.NotaId">Deletar</button>
-                        <a asp-action="EditarNota" asp-route-notaId="@nota.NotaId">Editar</a>
-                    </form>
-                </div>*@
             </div>
         </li>
-
+        <a class="btn btn-primary" asp-action="ExibirNotas" asp-route-repositorioId="@nota.RepositorioId">Voltar</a>
     }
 </ul>
+

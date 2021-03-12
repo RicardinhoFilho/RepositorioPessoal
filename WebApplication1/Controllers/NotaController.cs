@@ -25,8 +25,11 @@ namespace WebApplication1.Controllers
 
             var notas = notasGerais.Where(n => n.RepositorioId == repId);
 
+            notas = notas.OrderBy(Nota => Nota.Titulo);
+
             ViewData["repositorioId"] = repositorioId;
             ViewData["Titulo"] = repositorio.Titulo;
+            ViewData["usuarioId"] = repositorio.UsuarioId;
 
             return View(notas);
         }
@@ -79,7 +82,7 @@ namespace WebApplication1.Controllers
                 throw ex;
             }
         }
-
+        
         [HttpPost]
         public async Task<JsonResult> ExcluirNota(int notaId)
         {
@@ -108,6 +111,7 @@ namespace WebApplication1.Controllers
             return View();
         }
 
+        
         [HttpPost]
         public async Task<IActionResult> EditarNota(NotaViewModel model)
         {

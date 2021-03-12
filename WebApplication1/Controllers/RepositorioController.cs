@@ -23,7 +23,6 @@ namespace WebApplication1.Controllers
 
 
             this.contexto = contexto;
-            //webHostEnvironment = _webHostEnvironment;
         }
 
         public async Task<IActionResult> TelaInicial(int usuarioId)
@@ -35,6 +34,7 @@ namespace WebApplication1.Controllers
 
             ViewData["usuarioId"] = usuarioId;
 
+            repositorios = repositorios.OrderBy(rep => rep.Titulo);
 
             return View(repositorios);
         }

@@ -1,17 +1,24 @@
-﻿@model  Nota
+﻿@model Nota
 @{
     ViewData["Título"] = Model.Titulo;
 }
+
+
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Model.Titulo</title>
 </head>
 <body>
+    <div class="mb-3">
+        <h1>@Model.Titulo</h1>
 
-    <h1>@Model.Titulo</h1>
 
-    @Model.Anotacao
+<textarea class="form-control" readonly spellcheck="false" wrap="soft" rows="8" cols="33">@Model.Anotacao</textarea>
+    </div>
+
+    <a class="btn btn-primary" asp-action="ExibirNotas" asp-route-repositorioId="@Model.RepositorioId">Voltar</a>
 
 </body>
 </html>
+

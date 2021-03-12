@@ -36,7 +36,7 @@
                         <form action="/" method="post">
 
                             <a class="btn btn-danger" onclick="ConfirmarExclusao(@item.RepositorioId)">Deletar</a>
-                            <a class="link-warning" asp-action="EditarRepositorio" asp-route-repositorioId="@item.RepositorioId">Editar</a>
+                            <a class="btn btn-warning" asp-action="EditarRepositorio" asp-route-repositorioId="@item.RepositorioId">Editar</a>
                         </form>
                     </div>
                 </div>
@@ -45,7 +45,8 @@
 
         }
     </ul>
-
+    
+    
 
     <div class="modal" tabindex="-1">
         <div class="modal-dialog">
