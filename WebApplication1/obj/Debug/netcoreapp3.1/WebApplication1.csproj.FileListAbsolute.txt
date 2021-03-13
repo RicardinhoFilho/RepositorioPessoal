@@ -159,3 +159,4 @@ C:\Users\User\Desktop\PersonalRepository\WebApplication1\obj\Debug\netcoreapp3.1
 C:\Users\User\Desktop\PersonalRepository\WebApplication1\obj\Debug\netcoreapp3.1\Razor\Views\Nota\BuscaAvancada.cshtml.g.cs
 C:\Users\User\Desktop\PersonalRepository\WebApplication1\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ModalExcluirNotaScript.cshtml.g.cs
 C:\Users\User\Desktop\PersonalRepository\WebApplication1\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ModalExcluirRepositorioScript.cshtml.g.cs
+C:\Users\User\Desktop\PersonalRepository\WebApplication1\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_DesabilitaBotao.cshtml.g.cs

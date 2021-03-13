@@ -9,9 +9,8 @@
 </head>
 <body>
 
-   
-        <h1>Editar Nota</h1>
-        <p>@ViewData["Anotacao"]</p>
+
+    <h1>Editar Nota</h1>
 
     <form asp-action="EditarNota" method="post">
         <div class="mb-3">
@@ -23,17 +22,22 @@
 
 
             <label asp-for="Anotacao" id="Anotacao">Anotacao</label>
-            <textarea class="form-control" rows="8" cols="33" asp-for="Anotacao"  spellcheck="false" wrap="soft" required>@ViewData["Anotacao"]</textarea>
-            @*<input type="text" class="form-control" rows="8" cols="33" asp-for="Anotacao" value="Anotacao" id="Anotacao" value="@(ViewData["Anotacao"])"/>*@
+            <textarea class="form-control" rows="8" cols="33" asp-for="Anotacao" spellcheck="false" wrap="soft" placeholder="@ViewData["Anotacao"]">@ViewData["Anotacao"]</textarea>
             <span asp-validation-for="Anotacao"></span>
         </div>
 
-        <button type="submit" class="btn btn-primary mb-3">Salvar Alteração</button>
+        <button type="submit" class="btn btn-primary mb-3" data-form-save>Salvar Alteração</button>
         <button type="submit" class="btn btn-primary mb-3" asp-action="ExibirNotas" asp-route-repositorioId="@ViewData["repositorioId"]">Cancelar</button>
 
     </form>
 
+    <script>
+        document.querySelector("textarea").textContent = "@ViewData["Anotacao"]";
+    </script>
+    <partial name="_DesabilitaBotao" />
+
 </body>
 
 </html>
+
 

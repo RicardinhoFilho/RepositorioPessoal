@@ -2,6 +2,7 @@
 
 <link href="~/css/site.css" rel="stylesheet" />
 
+
 <nav class="navbar navbar-light  bg-light fixed-top">
     <div class="container-fluid">
         <a class="navbar-brand" href="https://localhost:44358/" asp->Perfil</a>
@@ -10,9 +11,8 @@
         <a class="nav-link" href="#">Notas</a>
 
 
-        <form class="d-flex" >
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            @*<button class="btn btn-outline-success" type="submit">Search</button>*@
+        <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Search">
         </form>
     </div>
 </nav>
@@ -20,12 +20,13 @@
 <script>
     var campoFiltro = document.querySelector(".form-control");
 
-    campoFiltro.addEventListener("input", () => {
+
+    campoFiltro.addEventListener("input", (event) => {
         //console.log(campoFiltro.value);
         var repositorios = document.querySelectorAll(".list-group-item");
         if (campoFiltro.value.length > 0) {
             //console.log("Deu Certo")
-            
+
 
             repositorios.forEach(repositorio => {
                 var item = repositorio.querySelector(".Campo-De-Busca")
@@ -37,6 +38,8 @@
                 } else {
                     repositorio.classList.remove("d-none");
                 }
+
+
             })
 
         } else {
@@ -44,6 +47,17 @@
                 repositorio.classList.remove("d-none");
             });
         }
+
+        
+        //Desabilitando a tecla enter
+        $(function () {
+            $('input').on('keypress', function (e) {
+                if (e.keyCode == 13) {
+                    e.preventDefault();
+                }
+            });
+        });
+
     });
 
 
