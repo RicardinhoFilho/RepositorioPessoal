@@ -11,7 +11,7 @@
 
    
         <h1>Editar Nota</h1>
-    
+        <p>@ViewData["Anotacao"]</p>
 
     <form asp-action="EditarNota" method="post">
         <div class="mb-3">
@@ -23,7 +23,7 @@
 
 
             <label asp-for="Anotacao" id="Anotacao">Anotacao</label>
-            <textarea class="form-control" rows="8" cols="33" asp-for="Anotacao" placeholder="@(ViewData["Anotacao"])" spellcheck="false" wrap="soft"></textarea>
+            <textarea class="form-control" rows="8" cols="33" asp-for="Anotacao"  spellcheck="false" wrap="soft" required>@ViewData["Anotacao"]</textarea>
             @*<input type="text" class="form-control" rows="8" cols="33" asp-for="Anotacao" value="Anotacao" id="Anotacao" value="@(ViewData["Anotacao"])"/>*@
             <span asp-validation-for="Anotacao"></span>
         </div>

@@ -67,26 +67,8 @@
             </div>
         </div>
     </div>
-
-    <script>
-        function ConfirmarExclusao(repositorioId) {
-            $(".modal").modal();
-            $(".btnExcluir").on('click', function () {
-                $.ajax({
-                    url: '/Repositorio/ExcluirRepositorio',
-                    method: 'POST',
-                    data: { repositorioId: repositorioId },
-                    success: function (data) {
-                        location.reload(true);
-                    }
-                });
-            });
-            $(".btnFechar").on('click', function () {
-                notaId = null;
-                $(".modal").modal('hide');
-            })
-        }
-    </script>
-
+    
+    <partial name="_ModalExcluirRepositorioScript"/>
+   
 </body>
 </html>

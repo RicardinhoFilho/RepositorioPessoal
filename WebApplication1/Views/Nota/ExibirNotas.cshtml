@@ -64,22 +64,4 @@
     </div>
 </div>
 
-<script>
-    function ConfirmarExclusao(notaId) {
-        $(".modal").modal();
-        $(".btnExcluir").on('click', function () {
-            $.ajax({
-                url: '/Nota/ExcluirNota',
-                method: 'POST',
-                data: { notaId: notaId },
-                success: function (data) {
-                    location.reload(true);
-                }
-            });
-        });
-        $(".btnFechar").on('click', function () {
-            notaId = null;
-            $(".modal").modal('hide');
-        })
-    }
-</script>
+<partial name="_ModalExcluirNotaScript" />

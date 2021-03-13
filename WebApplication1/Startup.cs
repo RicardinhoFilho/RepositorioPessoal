@@ -11,7 +11,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using WebApplication1.Interfaces;
 using WebApplication1.Models;
-using WebApplication1.Repositorio;
 
 namespace WebApplication1
 {
