@@ -18,8 +18,8 @@
 </nav>
 
 <script>
-    var campoFiltro = document.querySelector(".form-control");
 
+    var campoFiltro = document.querySelector(".form-control");
 
     campoFiltro.addEventListener("input", (event) => {
         //console.log(campoFiltro.value);
@@ -38,17 +38,12 @@
                 } else {
                     repositorio.classList.remove("d-none");
                 }
-
-
             })
-
         } else {
             repositorios.forEach(repositorio => {
                 repositorio.classList.remove("d-none");
             });
         }
-
-        
         //Desabilitando a tecla enter
         $(function () {
             $('input').on('keypress', function (e) {

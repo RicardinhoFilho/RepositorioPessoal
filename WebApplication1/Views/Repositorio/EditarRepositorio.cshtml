@@ -14,16 +14,15 @@
     <form asp-action="EditarRepositorio" method="post">
         <div class="mb-3">
             <label asp-for="Titulo" id="Titulo">Titulo</label>
-            <input class="form-control" asp-for="Titulo" value="@ViewData["Titulo"]" id="Titulo" />
+            <input class="form-control" asp-for="Titulo" value="@ViewData["Titulo"]" id="Titulo" data-form-title="DesbloquearBotao" />
             <span asp-validation-for="Titulo"></span>
         </div>
 
-        <button type="submit" class="btn btn-primary mb-3">Salvar Alteração</button>
+        <button type="submit" class="btn btn-primary mb-3" data-form-save ="SalvarAlterações">Salvar Alteração</button>
         <button type="submit" class="btn btn-primary mb-3" asp-action="TelaInicial" asp-route-usuarioId="@ViewData["usuarioid"]">Cancelar</button>
-        @*<button class="btn btn-primary mb-3" asp-action="TelaInicial" asp-route-usuarioId="@ViewData["usuarioId"]">Cancelar</button>*@
     </form>
 
-    
+    <partial name="_DesabilitaBotao" />
     
 </body>
 

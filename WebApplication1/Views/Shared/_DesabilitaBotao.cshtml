@@ -5,16 +5,36 @@
 
     botao.disabled = true;
 
-    document.querySelector("textarea").addEventListener("input", function (event){
-        console.log("Deu Certo");
-        let anotacao =  document.querySelector("textarea").value
+    document.querySelector("[data-form-title]").addEventListener("input", function (event) {
 
-        if (anotacao.length == 0) {
+        let titulo = document.querySelector("[data-form-title]").value;
+
+        if (titulo.length == 0) {
 
             botao.disabled = true;
         } else {
             botao.disabled = false;
         }
     });
+
+    if (document.querySelector("textarea")) {
+
+        document.querySelector("textarea").addEventListener("input", function (event) {
+            // console.log("Deu Certo");
+            let anotacao = document.querySelector("textarea").value;
+
+            if (anotacao.length == 0) {
+
+                botao.disabled = true;
+            } else {
+                botao.disabled = false;
+            }
+        });
+
+    }
+
+    
+
+    
 
 </script>
