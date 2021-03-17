@@ -13,12 +13,12 @@
     <form asp-action="AdicionarRepositorio" method="post">
         <div class="mb-3">
             <label asp-for="Titulo" id="Titulo">Titulo</label>
-            <input class="form-control" asp-for="Titulo" value="@ViewData["Titulo"]" id="Titulo" />
+            <input class="form-control" asp-for="Titulo" placeholder="Titulo" id="Titulo" data-form-title="HabilitarBotão" />
             <span asp-validation-for="Titulo"></span>
 
         </div>
 
-        <button type="submit" class="btn btn-primary mb-3">Salvar Alteração</button>
+        <button type="submit" class="btn btn-primary mb-3" data-form-save="HabilitarBotão">Salvar Alteração</button>
         <button  class="btn btn-primary mb-3"  asp-action="TelaInicial" asp-route-usuarioId="@ViewData["usuarioId"]">Cancelar</button>
     </form>
 

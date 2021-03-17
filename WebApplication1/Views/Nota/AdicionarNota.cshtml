@@ -6,18 +6,14 @@
 <head>
     <title>AdicionarRepositorio</title>
     <link href="~/css/bootstrap.min.css" rel="stylesheet" />
-    @*<link href="~/css/b" rel="stylesheet" />
-    <link href="~/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="~/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="~/css/bootstrap.min.css" rel="stylesheet" />*@
 </head>
 <body>
 
     <h1>AdicionarNota</h1>
     <form asp-action="AdicionarNota" method="post">
         <div class="mb-3">
-            <label asp-for="Titulo" id="Titulo">Titulo</label>
-            <input class="form-control" asp-for="Titulo" value="Titulo" id="Titulo" />
+            <label asp-for="Titulo" id="Titulo" data-form-title="HabilitarBotão">Titulo</label>
+            <input class="form-control" asp-for="Titulo" placeholder="Titulo" id="Titulo" />
             <span asp-validation-for="Titulo"></span>
         </div>
         <div class="mb-3">
@@ -26,10 +22,12 @@
             <span asp-validation-for="Anotacao"></span>
         </div>
 
-        <button type="submit" class="btn btn-primary mb-3">Salvar Anotação</button>
+        <button type="submit" class="btn btn-primary mb-3" data-form-save="Habilitar/DesabilitarBotão">Salvar Anotação</button>
         <button type="submit" class="btn btn-primary mb-3" Alteração asp-action="ExibirNotas" asp-route-repositorioId="@ViewData["repositorioId"]">Cancelar</button>
     </form>
-       
+
+    <partial name="_DesabilitaBotao" />
+
 </body>
 
 </html>
