@@ -14,8 +14,8 @@
 
     <form asp-action="EditarNota" method="post">
         <div class="mb-3">
-            <label asp-for="Titulo" id="Titulo" >Titulo</label>
-            <input class="form-control" asp-for="Titulo" value="@ViewData["Titulo"]" id="Titulo" data-form-title="DesbloquearBotao"/>
+            <label asp-for="Titulo" id="Titulo">Titulo</label>
+            <input class="form-control" asp-for="Titulo" value="@ViewData["Titulo"]" id="Titulo" data-form-title="DesbloquearBotao" />
             <span asp-validation-for="Titulo"></span>
         </div>
         <div class="mb-3">
@@ -26,7 +26,7 @@
             <span asp-validation-for="Anotacao"></span>
         </div>
 
-        <button type="submit" class="btn btn-primary mb-3" data-form-save ="DesabilitarBotão">Salvar Alteração</button>
+        <button type="submit" class="btn btn-primary mb-3" data-form-save="DesabilitarBotão">Salvar Alteração</button>
         <button type="submit" class="btn btn-primary mb-3" asp-action="ExibirNotas" asp-route-repositorioId="@ViewData["repositorioId"]">Cancelar</button>
 
     </form>
@@ -34,7 +34,9 @@
     <script>
        document.querySelector("textarea").innerHTML = "@ViewData["Anotacao"]";
     </script>
-    <partial name="_DesabilitaBotao" />
+    <script src="https://cdn.tiny.cloud/1/lhvk1aq0f97cdlhq8ymfjgwo9ynyn8n88yj3gnhkprshxnto/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>tinymce.init({ selector: 'textarea' });</script>
+    @*<partial name="_DesabilitaBotao" />*@
 
 </body>
 

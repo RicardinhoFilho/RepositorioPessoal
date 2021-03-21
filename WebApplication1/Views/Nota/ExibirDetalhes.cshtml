@@ -14,7 +14,7 @@
         <h1>@Model.Titulo</h1>
 
 
-<textarea class="form-control" readonly spellcheck="false" wrap="soft" rows="8" cols="33">@Model.Anotacao</textarea>
+@Html.Raw(Model.Anotacao)
     </div>
 
     <a class="btn btn-primary" asp-action="ExibirNotas" asp-route-repositorioId="@Model.RepositorioId">Voltar</a>
