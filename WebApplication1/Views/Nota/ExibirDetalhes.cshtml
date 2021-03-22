@@ -13,11 +13,18 @@
     <div class="mb-3">
         <h1>@Model.Titulo</h1>
 
-
-@Html.Raw(Model.Anotacao)
+        @Html.Raw(Model.Anotacao)
     </div>
 
-    <a class="btn btn-primary" asp-action="ExibirNotas" asp-route-repositorioId="@Model.RepositorioId">Voltar</a>
+    <form>
+        <a class="btn btn-primary" asp-action="ExibirNotas" asp-route-repositorioId="@Model.RepositorioId">Voltar</a>
+        <a class="btn btn-danger float-right" onclick="ConfirmarExclusaoComRedirect(@TempData["notaId"], @TempData["repositorioId"])">Deletar</a>
+        <a class="btn btn-warning float-right" asp-action="EditarNota" asp-route-notaId="@TempData["notaId"]">Editar</a>
+    </form>
+
+    <partial name="_ModalExcluirView" />
+
+    <partial name="_ModalExcluirNotaScript" />
 
 </body>
 </html>

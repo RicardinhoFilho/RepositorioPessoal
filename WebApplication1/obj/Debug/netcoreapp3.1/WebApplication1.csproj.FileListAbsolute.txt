@@ -322,3 +322,4 @@ C:\Users\User\Desktop\RepositorioPessoal\WebApplication1\obj\Debug\netcoreapp3.1
 C:\Users\User\Desktop\RepositorioPessoal\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.dll
 C:\Users\User\Desktop\RepositorioPessoal\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.pdb
 C:\Users\User\Desktop\RepositorioPessoal\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.genruntimeconfig.cache
+C:\Users\User\Desktop\RepositorioPessoal\WebApplication1\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ModalExcluirView.cshtml.g.cs

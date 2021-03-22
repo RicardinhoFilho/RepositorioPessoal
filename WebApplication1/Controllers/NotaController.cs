@@ -73,12 +73,14 @@ namespace WebApplication1.Controllers
             {
                 var nota = await contexto.Notas.FindAsync(id);
 
+                TempData["notaId"] = id;
+                TempData["repositorioId"] = nota.RepositorioId;
+
                 return View(nota);
 
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
         }
@@ -88,7 +90,7 @@ namespace WebApplication1.Controllers
         {
             var nota = await contexto.Notas.FindAsync(notaId);
 
-            int repositorioId = nota.RepositorioId;
+            //int repositorioId = nota.RepositorioId;
 
             contexto.Notas.Remove(nota);
             await contexto.SaveChangesAsync();

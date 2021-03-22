@@ -17,4 +17,24 @@
             $(".modal").modal('hide');
         })
     }
+
+    function ConfirmarExclusaoComRedirect(notaId, repositorioId) {
+        $(".modal").modal();
+        $(".btnExcluir").on('click', function () {
+            $.ajax({
+                url: '/Nota/ExcluirNota',
+                method: 'POST',
+                data: { notaId: notaId },
+                success: function (repositorioId) {
+                    window.location.replace = `Nota/ExibirNotas?usuarioId=${usuariId}`;
+                }
+            });
+
+           
+        });
+        $(".btnFechar").on('click', function () {
+            notaId = null;
+            $(".modal").modal('hide');
+        })
+    }
 </script>
