@@ -25,8 +25,8 @@
                 url: '/Nota/ExcluirNota',
                 method: 'POST',
                 data: { notaId: notaId },
-                success: function (repositorioId) {
-                    window.location.replace = `Nota/ExibirNotas?usuarioId=${usuariId}`;
+                success: function (data) {
+                    location.replace(`/Nota/ExibirNotas?repositorioId=${repositorioId}`);
                 }
             });
 
