@@ -21,6 +21,7 @@
 <h2>📝 Como Utilizar</h2>
 <p>Após feito o Clone, é preciso que tenha .Net Core 3.1 instalado em sua máquina e <a href="https://www.microsoft.com/pt-br/sql-server/sql-server-downloads">SqlServer</a>, caso queira somente rodar o programa basta baixar o Runtime! Tanto a versão SDK(para desenvolvimento) quando o Runtime estão disponíveis em:
     <a href="https://dotnet.microsoft.com/download">https://dotnet.microsoft.com/download</a>
+    Também será necessário alterar a chave de conexão no arquivo: <a href="./WebApplication1/appsettings.json">appsettings.json</a>, alterando a chave ConexaoBD, para a cahve de conexão de seu banco de dados!
 </p>
 
 <h2>💻 Projeto</h2>
